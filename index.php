@@ -6,37 +6,14 @@
 		<title>Minilink - Shorten your URLs</title>
 		<style>
             *{
-                background: #313D5A;
+                background: #F1EDEE;
                 font-family: monospace;
-                color: #CBC5EA;
+                color: #3D5467;
             }
             
             #header-section{
                 display: flex;
                 justify-content: space-around;
-            }
-            
-            #navigation-menu-options{
-                display: flex;
-                justify-content: space-around;
-            }
-            
-            #navigation-menu-options a{
-                padding: 15px;
-                margin: 0 10px 0 10px;
-                text-decoration: none;
-                border: solid;
-                font-family: sans-serif;
-            }
-            
-            #navigation-menu-options a:hover{
-                background: #CBC5EA;
-                color: #313D5A;
-            }
-            
-            #navigation-menu-options li{
-                list-style: none;
-                margin: 15px;
             }
             
             #main-section{
@@ -47,12 +24,12 @@
             }
             
             #urlname{
-                background: #313D5A;
+                background: #F1EDEE;
                 border-top: none;
                 border-left: none;
                 border-right: none;
                 border-bottom: solid;
-                border-bottom-color: #e1f7f1;
+                border-bottom-color: #3D5467;
                 
                 width: 100%;
                 height: 25px;
@@ -61,7 +38,7 @@
             
             #footer-section{
                 background: #3a3a3a;
-                position: absolute;
+                position:fixed;
                 bottom: 0;
                 left: 0;
                 display: flex;
@@ -70,22 +47,24 @@
             }
             
             #urlname::placeholder{
-                color: #e1f7f1;
+                color: #3D5467;
                 opacity: 0.8;
                 font-size: 18px;
             }
             
             #shortenbutton,#shortencustom{
                 border: solid;
-                border-radius: 0;
+                border-radius: 5px;
                 padding: 10px 15px 10px 15px;
-
+                margin: 10px 0 10px 0;
             }
             
             #shortenbutton:hover,#shortencustom:hover{
-                transform: scale(1.05);
-                transition: transform;
                 cursor: pointer;
+                border: solid;
+                border-color: #3D5467;
+                background-color: #3D5467;
+                color: #F1EDEE;
             }
             
             #shortenbutton:active,#shortencustom:active{
@@ -100,7 +79,7 @@
                 font-size: 14px;
             }
             
-            @media screen and (max-width: 720px){
+            @media screen and (max-width: 1000px){
                 #slogan{
                     display: none;
                 }
@@ -112,28 +91,26 @@
 	<body OnLoad="document.shortenform.urlname.focus();">
 		<header id="header-section">
 			<h1>Mini Link</h1>
-			<!--<nav>
-				<ul id="navigation-menu-options">
-					<li><a href="https://minilink.in/">Home</a></li>
-					<li><a href="https://minilink.in/linktrees.html">Link Trees</a></li>
-					<li><a href="https://minilink.in/user.html">Log In/Sign Up</a></li>
-				</ul>
-			</nav>-->
 		</header>
 		<main id="main-section">
 			<div id="url-form">
                 <form method="post" name="shortenform">
                     <input type="url" name="urlname" id="urlname" placeholder="Paste a URL here" required><br>
                     <input type="submit" formaction="shorten.php" value="Shorten URL" id="shortenbutton">
-                    <input type="submit" formaction="custom.php" value="Generate custom URL" id="shortencustom" disabled>
+                    <input type="submit" onclick="disabledFeature()" value="Generate custom URL" id="shortencustom">
                 </form>
             </div>
             <div id="slogan">
-                <h1>Make your URLs <u>mini</u>mized with MiniLink</h1>
+                <h1>Make your URLs <u>mini</u>mized with Mini Link</h1>
             </div>
 		</main>
 		<footer id="footer-section">
             <p id="copyright-text">copyright &copy; minilink.in</p>
 		</footer>
+        <script>
+            function disabledFeature(){
+                alert("Custom URL feature is under development and will be released soon.");
+            }
+        </script>
 	</body>
 </html>

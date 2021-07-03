@@ -2,7 +2,7 @@
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 	$mysqli = mysqli_connect("localhost","a1621wtt_minilink","}V_Eb!h8dwal","a1621wtt_minilink");
 	if (mysqli_connect_errno()) {
-            printf("Connect failed: %s\n", mysqli_connect_error());
+            echo "Sorry! Our systems are offline. Please try after some time.";
             exit();
         }
 	$code = mysqli_real_escape_string($mysqli,$_GET["code"]);
@@ -18,7 +18,7 @@
 		exit;
 	}
 	else {
-		echo "Error";
+		echo "The URL you have entered doesnot exist.";
 	}
 	mysqli_close();
 ?>
