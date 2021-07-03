@@ -20,5 +20,5 @@
 	else {
 		echo "The URL you have entered doesnot exist.";
 	}
-	mysqli_close();
+	mysqli_close($mysqli);
 ?>
