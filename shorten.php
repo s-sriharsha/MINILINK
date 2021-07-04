@@ -120,7 +120,7 @@
 	}
 	$shorturl=base_convert($id,10,36);
 	mysqli_query($mysqli,"insert into urllist values('$id','$urlinput','$shorturl')");
-	echo "<center><a href='http://minilink.in/". $shorturl ."' target='_blank'>http://minilink.in/".$shorturl."</a></center>";
+	echo "<center><h3><a href='http://minilink.in/". $shorturl ."' target='_blank'>http://minilink.in/".$shorturl."</a></h3></center>";
 	mysqli_close($mysqli);
 ?> 
     </div>

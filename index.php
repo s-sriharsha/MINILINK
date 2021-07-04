@@ -2,7 +2,7 @@
 <html lang='en'>
 	<head>
 		<meta charset='utf-8'>
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="width=device-width, initial-scale=1" name="viewport">
 		<title>Minilink - Shorten your URLs</title>
 		<style>
             *{
@@ -52,19 +52,27 @@
                 font-size: 18px;
             }
             
-            #shortenbutton,#shortencustom{
+            #shortencustom{
                 border: solid;
                 border-radius: 5px;
                 padding: 10px 15px 10px 15px;
                 margin: 10px 0 10px 0;
             }
             
-            #shortenbutton:hover,#shortencustom:hover{
-                cursor: pointer;
+            #shortenbutton{
                 border: solid;
+                border-radius: 5px;
+                padding: 10px 15px 10px 15px;
+                margin: 10px 0 10px 0;
                 border-color: #3D5467;
                 background-color: #3D5467;
                 color: #F1EDEE;
+            }
+
+            #shortenbutton:hover,#shortencustom:hover{
+                cursor: pointer;
+                transform: scale(1.05);
+                transition: all;
             }
             
             #shortenbutton:active,#shortencustom:active{
@@ -75,7 +83,7 @@
             #copyright-text{
                 background: #3a3a3a;
                 color: #ffffff;
-                
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 font-size: 14px;
             }
             
@@ -83,8 +91,6 @@
                 #slogan{
                     display: none;
                 }
-                
-                
             }
 		</style>
 	</head>
