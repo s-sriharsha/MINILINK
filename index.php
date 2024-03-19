@@ -30,7 +30,7 @@
                 border-right: none;
                 border-bottom: solid;
                 border-bottom-color: #3D5467;
-                
+                outline: none;
                 width: 100%;
                 height: 25px;
                 margin: 5% 0 5% 0;
@@ -50,6 +50,7 @@
                 color: #3D5467;
                 opacity: 0.8;
                 font-size: 18px;
+                outline: none;
             }
             
             #shortencustom{

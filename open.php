@@ -1,6 +1,6 @@
 <?php
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-	$mysqli = mysqli_connect("localhost","a1621wtt_minilink","}V_Eb!h8dwal","a1621wtt_minilink");
+	$mysqli = mysqli_connect("localhost","u197704904_minilink","Minilink@sksh11","u197704904_minilink");
 	if (mysqli_connect_errno()) {
             echo "Sorry! Our systems are offline. Please try after some time.";
             exit();

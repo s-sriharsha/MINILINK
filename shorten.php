@@ -88,7 +88,7 @@
             }
 		</style>
 	</head>
-	<body OnLoad="document.shortenform.urlname.focus();">
+	<body >
 		<header id="header-section">
 			<h1>Mini Link</h1>
 		</header>
@@ -96,7 +96,7 @@
 			<div id="shortened-url">
 <?php
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-    $mysqli = new mysqli("localhost","a1621wtt_minilink","}V_Eb!h8dwal","a1621wtt_minilink");
+    $mysqli = new mysqli("localhost","u197704904_minilink","Minilink@sksh11","u197704904_minilink");
 	if (mysqli_connect_errno()) {
         echo "<center><p>server looks to be offline. Please try after some time</p></center>";
         exit();
@@ -120,7 +120,7 @@
 	}
 	$shorturl=base_convert($id,10,36);
 	mysqli_query($mysqli,"insert into urllist values('$id','$urlinput','$shorturl')");
-	echo "<center><h3><a href='http://minilink.in/". $shorturl ."' target='_blank'>http://minilink.in/".$shorturl."</a></h3></center>";
+	echo "<center><h3><a href='http://minilink.pulsemusicai.in/". $shorturl ."' target='_blank'>http://minilink.pulsemusicai.in/".$shorturl."</a></h3></center>";
 	mysqli_close($mysqli);
 ?> 
     </div>
