@@ -82,7 +82,7 @@
             mysqli_query($mysqli,"insert into urllist values('$id','$urlinput','$shorturl')");
             echo "<center><h3><a href='http://minilink.pulsemusicai.in/". $shorturl ."' target='_blank'>http://minilink.pulsemusicai.in/".$shorturl."</a></h3></center>";
         } else {
-            echo "<center><h3>URL already exists, please try with other custom URL.</h3></center>"
+            echo "<center><h3>URL already exists, please try with other custom URL.</h3></center>";
         }
     }
 	mysqli_close($mysqli);
