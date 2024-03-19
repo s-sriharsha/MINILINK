@@ -74,20 +74,17 @@
         shorturl text NOT NULL
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;");
 	$urlinput=mysqli_real_escape_string($mysqli,$_POST['urlname']);
-	$check = 0;
-	while($check == 0){
-	    $id=rand(0,999999999);
-        if ($result = mysqli_query($mysqli,"SELECT * FROM urllist WHERE `id` = '$id'")) {
-            $row_cnt = mysqli_num_rows($result);
-            mysqli_free_result($result);
-            if ($row_cnt == 0){
-                $check = 1;
-            }
-    	}
-	}
-	$shorturl=base_convert($id,10,36);
-	mysqli_query($mysqli,"insert into urllist values('$id','$urlinput','$shorturl')");
-	echo "<center><h3><a href='http://minilink.pulsemusicai.in/". $shorturl ."' target='_blank'>http://minilink.pulsemusicai.in/".$shorturl."</a></h3></center>";
+    $shorturl=mysqli_real_escape_string($mysqli,$_POST['urlshortcode']);
+    if ($result = mysqli_query($mysqli,"SELECT * FROM urllist WHERE `shorturl` = '$shorturl'")) {
+        $row_cnt = mysqli_num_rows($result);
+        mysqli_free_result($result);
+        if ($row_cnt == 0){
+            mysqli_query($mysqli,"insert into urllist values('$id','$urlinput','$shorturl')");
+            echo "<center><h3><a href='http://minilink.pulsemusicai.in/". $shorturl ."' target='_blank'>http://minilink.pulsemusicai.in/".$shorturl."</a></h3></center>";
+        } else {
+            echo "<center><h3>URL already exists, please try with other custom URL.</h3></center>"
+        }
+    }
 	mysqli_close($mysqli);
 ?> 
     </div>
